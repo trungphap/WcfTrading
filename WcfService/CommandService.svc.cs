@@ -1,7 +1,7 @@
 ﻿using Commands;
 using Interfaces;
-using System.Windows.Input;
 using Models;
+using System.Windows.Input;
 
 namespace WcfService
 {
@@ -14,6 +14,7 @@ namespace WcfService
             return new ConsumeCommand(consumeShell, queueShell);
         }
 
+
         public ICommand GetProduceCommand(IShell produceShell, IShell queueShell)
         {
            return new ProduceCommand(produceShell, queueShell);
@@ -24,11 +25,7 @@ namespace WcfService
             return new QueueCommandG<string>(queueShell);
         }
 
-        public IShell GetShell(bool statusExecutable)
-        {
-            return new Shell() { StatusExecutable = statusExecutable };
-        }
-
+       
         public ICommand GetStopCommand(IShell queueShell)
         {
             return new StopCommand(queueShell);
@@ -37,6 +34,13 @@ namespace WcfService
         public ICommand GetStopTask(IShell taskShell)
         {
             return new StopTask(taskShell);
+        }
+        public ShellData GetShell(bool statusExecutable)
+        {
+            return new ShellData() {
+                 
+                ShellMember =   new Shell() { StatusExecutable= statusExecutable }
+            };
         }
     }
 }
