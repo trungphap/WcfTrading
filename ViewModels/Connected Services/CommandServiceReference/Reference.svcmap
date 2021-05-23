@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c94a08bd-f163-4d8b-8c43-f688d5c98145" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fb600748-13ec-4100-af83-2606402414af" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,10 @@
     <MetadataSource Address="http://wcf-trading.somee.com/CommandService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CommandService.xsd" MetadataType="Schema" ID="ffd89f81-8160-483a-bbc6-a2a9c7fa7680" SourceId="1" SourceUrl="http://wcf-trading.somee.com/CommandService.svc?xsd=xsd1" />
-    <MetadataFile FileName="CommandService.wsdl" MetadataType="Wsdl" ID="dfacc857-b914-4ed2-bcd8-b923cfef2225" SourceId="1" SourceUrl="http://wcf-trading.somee.com/CommandService.svc?wsdl" />
-    <MetadataFile FileName="CommandService1.xsd" MetadataType="Schema" ID="f9e04a78-b382-4004-9856-d982f6f15b35" SourceId="1" SourceUrl="http://wcf-trading.somee.com/CommandService.svc?xsd=xsd0" />
-    <MetadataFile FileName="CommandService.disco" MetadataType="Disco" ID="8bf0c438-6580-4e10-8ec1-47e41454b602" SourceId="1" SourceUrl="http://wcf-trading.somee.com/CommandService.svc?disco" />
+    <MetadataFile FileName="CommandService.xsd" MetadataType="Schema" ID="029d0151-3825-4fb7-a682-1e91d7084231" SourceId="1" SourceUrl="http://wcf-trading.somee.com/CommandService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CommandService.wsdl" MetadataType="Wsdl" ID="80074595-5a26-46a2-b62e-b3d9d0a75abe" SourceId="1" SourceUrl="http://wcf-trading.somee.com/CommandService.svc?wsdl" />
+    <MetadataFile FileName="CommandService1.xsd" MetadataType="Schema" ID="34c9793c-8bec-4a77-9fb3-00644b85e0c6" SourceId="1" SourceUrl="http://wcf-trading.somee.com/CommandService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CommandService.disco" MetadataType="Disco" ID="84fb9cb3-5ef6-4a75-a527-550b70db69de" SourceId="1" SourceUrl="http://wcf-trading.somee.com/CommandService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
