@@ -1,7 +1,7 @@
-﻿using Models;
-using Commands;
-using System;
+﻿using Commands;
+using Interfaces;
 using System.Windows.Input;
+using Models;
 
 namespace WcfService
 {

@@ -1,4 +1,4 @@
-﻿using Models;
+﻿using Interfaces;
 using System.Windows.Input;
 
 namespace ViewModels

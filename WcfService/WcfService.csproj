@@ -92,6 +92,10 @@
       <Project>{83e84eed-347b-48a6-8210-3da5bf056509}</Project>
       <Name>Commands</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{072f3b6a-ada5-4a58-ae66-65ef796dc15a}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{9544d4fb-9141-41f5-912e-8f38ab4ccce7}</Project>
       <Name>Models</Name>

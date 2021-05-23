@@ -2,12 +2,12 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Commands
+namespace Interfaces
 {
-    public interface IAsyncCommandG<in T> : ICommand
+    public interface IAsyncCommand : ICommand
     {
-        bool CanExecute(T parameter);
-        Task ExecuteAsync(T parameter);
+        //bool CanExecute(object parameter);
+        Task ExecuteAsync(object parameter);
         IEnumerable<Task> RunningTasks { get; }
     }
 }

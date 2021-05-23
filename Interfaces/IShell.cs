@@ -1,5 +1,5 @@
 ﻿
-namespace Models
+namespace Interfaces
 {
     public interface IShell
     {
