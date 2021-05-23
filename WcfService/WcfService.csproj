@@ -61,10 +61,15 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CommandService.svc" />
     <Content Include="QueueService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICommandService.cs" />
+    <Compile Include="CommandService.svc.cs">
+      <DependentUpon>CommandService.svc</DependentUpon>
+    </Compile>
     <Compile Include="QueueService.svc.cs">
       <DependentUpon>QueueService.svc</DependentUpon>
     </Compile>
@@ -81,6 +86,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Commands\Commands.csproj">
+      <Project>{83e84eed-347b-48a6-8210-3da5bf056509}</Project>
+      <Name>Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{9544d4fb-9141-41f5-912e-8f38ab4ccce7}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
