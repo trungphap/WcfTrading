@@ -14,6 +14,18 @@ namespace WcfService
         [OperationContract]
         ICommand GetStopCommand(IShell queueShell);
 
- 
+        [OperationContract]
+        ICommand GetStopTask(IShell taskShell);
+
+        [OperationContract]
+        ICommand GetProduceCommand(IShell produceShell, IShell queueShell);
+
+        [OperationContract]
+        ICommand GetConsumeCommand(IShell consumeShell, IShell queueShell);
+
+        [OperationContract]
+        IShell GetShell(bool statusExecutable);
+
+
     }
 }
