@@ -6,6 +6,7 @@ using Interfaces;
 namespace WcfService
 {   
     [ServiceContract]
+    [ServiceKnownTypeAttribute(typeof(Shell))]
     public interface ICommandService
     {
 
@@ -25,18 +26,9 @@ namespace WcfService
         ICommand GetConsumeCommand(IShell consumeIShell, IShell queueIShell);
 
         [OperationContract]
-        ShellData GetShell(bool statusExecutable);       
+        Shell GetShell(bool statusExecutable);
+
     }
 
-    [DataContract]
-    public class ShellData
-    {
-        [DataMember(Name = "iShell")]
-        private Shell _shellInterface;
-        public IShell ShellMember {
-            get { return (_shellInterface); }
-            set { _shellInterface = (value as Shell); }
-        }
-    }
     
 }

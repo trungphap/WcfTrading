@@ -35,12 +35,9 @@ namespace WcfService
         {
             return new StopTask(taskShell);
         }
-        public ShellData GetShell(bool statusExecutable)
+        public Shell GetShell(bool statusExecutable)
         {
-            return new ShellData() {
-                 
-                ShellMember =   new Shell() { StatusExecutable= statusExecutable }
-            };
+            return new Shell() { StatusExecutable = statusExecutable };
         }
     }
 }
