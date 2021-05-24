@@ -55,6 +55,8 @@
     <Compile Include="AsyncCommandG.cs" />
     <Compile Include="ConsumeCommand.cs" />
     <Compile Include="CustomerCommand.cs" />
+    <Compile Include="IAsyncCommand.cs" />
+    <Compile Include="IAsyncCommandG.cs" />
     <Compile Include="ProduceCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueueCommandG.cs" />
@@ -62,10 +64,6 @@
     <Compile Include="StopTask.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
-      <Project>{072f3b6a-ada5-4a58-ae66-65ef796dc15a}</Project>
-      <Name>Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{9544d4fb-9141-41f5-912e-8f38ab4ccce7}</Project>
       <Name>Models</Name>
