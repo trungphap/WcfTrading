@@ -8,12 +8,11 @@ namespace Models
 {
     public class Circle : Shape
     {
-        public Circle()
-        {
-            Random rnd = new Random();
-            Diametre = rnd.Next(1, int.MaxValue);
-            Name = "Circle";
-            Id = rnd.Next(1, 1000);
+        public Circle(string name, int diametre, int id)
+        {           
+            Diametre = diametre;
+            Name = name;
+            Id = id;
         }
 
         public int Diametre { get; set; }
