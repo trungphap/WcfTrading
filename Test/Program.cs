@@ -11,6 +11,7 @@ namespace Test
     class Program
     {
         public static decimal Price { get; set; } = 0;
+        public static decimal PriceCap { get; set; } = 0.0020m;
         public static decimal PriceMin { get; set; } = 0;
         public static decimal PriceMax { get; set; } = 0;
         public static int Iteration { get; set; } = 0;
@@ -42,13 +43,13 @@ namespace Test
             if (price < PriceMin) PriceMin = price;
             Console.WriteLine("prix Min: " + PriceMin);
             Console.WriteLine("prix Max : " + PriceMax);
-            if ((PriceMax-PriceMin)/PriceMin > 0.0002m)
+            if ((PriceMax-PriceMin)/PriceMin > PriceCap)
             {
-                Console.WriteLine("Send message to telegram");
+                Console.WriteLine($"Price cap > {PriceCap} Send message to telegram");
                 var client = (WebSocket)sender;
                 client.Close();               
             }
-            Thread.Sleep(500);
+           // Thread.Sleep(500);
         }
 
  
