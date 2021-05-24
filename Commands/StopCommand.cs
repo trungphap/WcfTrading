@@ -31,14 +31,17 @@ namespace Commands
 
         public async override Task ExecuteAsync(object parameter)
         {
-            _shellList.ForEach(s => s.IsExecuting = false);
+            foreach (var s in _shellList)
+            {
+                s.IsExecuting = false;               
+            }
             _stopShell.StatusExecutable = true;
-            _stopShell.FontText = "";
             int.TryParse((string)parameter, out int t);
             await Task.Delay(Math.Max(t, 3000));
-
+            _stopShell.FontText = "";
             if (SingleChannel.ShareChannelWriter.TryComplete()) SingleChannel.ResetChannel();
-            await Task.Delay(1);
+
+            _stopShell.IsExecuting = false;
         }
 
     }

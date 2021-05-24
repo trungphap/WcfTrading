@@ -16,8 +16,7 @@ namespace Commands
         public ProduceCommand(IShell producerShell, IShell queueShell)
         {
             _producerShell = producerShell;
-            _queueShell = queueShell;
-            _shareQueue = SingleQueue.ShareQueueLazy;
+            _queueShell = queueShell;          
         }
 
 

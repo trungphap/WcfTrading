@@ -18,7 +18,8 @@ namespace Commands
 
         public override bool CanExecute(T param)
         {
-            return int.TryParse(param as string, out int t) && _queue.StatusExecutable;
+            return int.TryParse(param as string, out int t) && _queue.StatusExecutable
+                 && !_queue.IsExecuting;
         }
 
         public override async Task ExecuteAsync(T param)
@@ -34,7 +35,7 @@ namespace Commands
             else
                 SingleChannel.SetChannel(1000);
             await Task.Delay(1);
-            
+            _queue.IsExecuting = true;
         }
     }
 }
