@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="beabcc82-f6e8-4818-b24b-dbc415d39c5f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wcf-trading.somee.com/Shape.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Shape.disco" MetadataType="Disco" ID="c025086e-e013-4b2d-b34b-93971701d86f" SourceId="1" SourceUrl="http://wcf-trading.somee.com/Shape.svc?disco" />
+    <MetadataFile FileName="Shape.xsd" MetadataType="Schema" ID="a88d4761-7aa6-4526-abec-b21975f2e74b" SourceId="1" SourceUrl="http://wcf-trading.somee.com/Shape.svc?xsd=xsd2" />
+    <MetadataFile FileName="Shape.wsdl" MetadataType="Wsdl" ID="d5b98171-a6cc-4394-8fef-bfdb287a1251" SourceId="1" SourceUrl="http://wcf-trading.somee.com/Shape.svc?wsdl" />
+    <MetadataFile FileName="Shape1.xsd" MetadataType="Schema" ID="f54d5b75-bdee-446e-916f-b4de218f88c1" SourceId="1" SourceUrl="http://wcf-trading.somee.com/Shape.svc?xsd=xsd1" />
+    <MetadataFile FileName="Shape2.xsd" MetadataType="Schema" ID="61cf7703-8a2c-4a9b-b012-101fff60a1b5" SourceId="1" SourceUrl="http://wcf-trading.somee.com/Shape.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
