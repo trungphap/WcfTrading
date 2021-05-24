@@ -8,9 +8,9 @@ namespace Models
 {
     public class RegtangleFactory : ShapeFactory
     {
-        public override Shape CreateShape()
+        public override async Task<Shape> CreateShape()
         {
-            return new Rectangle();
+            return await Task.Run(() => new Rectangle());          
         }
     }
 }

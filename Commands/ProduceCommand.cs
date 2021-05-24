@@ -53,7 +53,7 @@ namespace Commands
             {
                 var shapeType = rnd.Next(0, 3);
                 var shapeFactory = GetShapeFactory(shapeType);
-                var shape = shapeFactory.CreateShape();
+                var shape =  await shapeFactory.CreateShape();
                 
                 await SingleChannel.ShareChannelWriter.WriteAsync(shape);
                 _producerShell.StatusText = $"Task { Thread.CurrentThread.ManagedThreadId } write {shape.Name} {shape.Id} :";

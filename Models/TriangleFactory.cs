@@ -8,9 +8,9 @@ namespace Models
 {
     public class TriangleFactory : ShapeFactory
     {
-        public override Shape CreateShape()
+        public async override Task<Shape> CreateShape()
         {
-            return new Triangle();
+            return await Task.Run( ()=>  new Triangle());           
         }
     }
 }

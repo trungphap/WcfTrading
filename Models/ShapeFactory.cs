@@ -8,7 +8,7 @@ namespace Models
 {
     public abstract class ShapeFactory
     {
-        public abstract Shape CreateShape();       
+        public abstract Task<Shape> CreateShape();       
       
     }
 }
