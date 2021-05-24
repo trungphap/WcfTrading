@@ -1,13 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Interfaces;
-using System.Runtime.Serialization;
 
 namespace Models
 {
-
-    [DataContract]
-    [KnownType(typeof(IShell))]
     public class Shell : IShell, INotifyPropertyChanged
     {
         string _statusText;
@@ -32,7 +27,7 @@ namespace Models
                 OnPropertyChanged();
             }
         }
-        [DataMember]
+
         public bool StatusExecutable
         {
             get => _statusExecutable;
