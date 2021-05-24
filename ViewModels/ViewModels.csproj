@@ -43,11 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\CommandServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="ProducerConsumer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -56,37 +51,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Connected Services\CommandServiceReference\CommandService.wsdl" />
-    <None Include="Connected Services\CommandServiceReference\CommandService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\CommandServiceReference\CommandService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
-      <Project>{072f3b6a-ada5-4a58-ae66-65ef796dc15a}</Project>
-      <Name>Interfaces</Name>
+    <ProjectReference Include="..\Commands\Commands.csproj">
+      <Project>{83e84eed-347b-48a6-8210-3da5bf056509}</Project>
+      <Name>Commands</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\CommandServiceReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\CommandServiceReference\CommandService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\CommandServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\CommandServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\CommandServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{9544d4fb-9141-41f5-912e-8f38ab4ccce7}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

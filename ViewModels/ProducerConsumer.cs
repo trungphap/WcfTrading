@@ -1,5 +1,9 @@
-﻿using Interfaces;
+﻿using Commands;
+using Models;
+using System;
+using System.Windows;
 using System.Windows.Input;
+
 
 namespace ViewModels
 {
@@ -26,27 +30,24 @@ namespace ViewModels
 
         public ProducerConsumer()
         {
-            using (var client = new CommandServiceReference.CommandServiceClient())
-            {
-                Consummer = (IShell)client.GetShell(true);
-                Consummer2 = (IShell)client.GetShell(true);
-                QueueShell = (IShell)client.GetShell(true);
-                ProducerShell = (IShell)client.GetShell(true);
-                ProducerShell2 = (IShell)client.GetShell(true);
+            Consummer = new Shell() { StatusExecutable = true };
+            Consummer2 = new Shell() { StatusExecutable = true };
+            QueueShell = new Shell() { StatusExecutable = true };
+            ProducerShell = new Shell() { StatusExecutable = true };
+            ProducerShell2 = new Shell() { StatusExecutable = true };          
 
+            ProduceCommand2 = new ProduceCommand(ProducerShell2, QueueShell);
+            ProduceCommand = new ProduceCommand(ProducerShell, QueueShell);
+            ConsumeCommand = new ConsumeCommand(Consummer, QueueShell);
+            ConsumeCommand2 = new ConsumeCommand(Consummer2, QueueShell);
+            QueueCommand = new QueueCommandG<string>(QueueShell);
+            StopCommand = new StopCommand(QueueShell);
 
-                ProduceCommand2 = (ICommand)client.GetProduceCommand(ProducerShell2, QueueShell);
-                ProduceCommand = (ICommand )client.GetProduceCommand(ProducerShell, QueueShell);
-                ConsumeCommand = (ICommand)client.GetConsumeCommand(Consummer, QueueShell);
-                ConsumeCommand2 = (ICommand)client.GetConsumeCommand(Consummer2, QueueShell);
-                QueueCommand = (ICommand)client.GetQueueCommand(QueueShell); 
-                StopCommand = (ICommand)client.GetStopCommand(QueueShell);  
+            StopProduce = new StopTask(ProducerShell);
+            StopProduce2 = new StopTask(ProducerShell2);
+            StopConsumer1 = new StopTask(Consummer);
+            StopConsumer2 = new StopTask(Consummer2);
 
-                StopProduce = (ICommand)client.GetStopTask(ProducerShell);
-                StopProduce2 = (ICommand)client.GetStopTask (ProducerShell2);
-                StopConsumer1 = (ICommand)client.GetStopTask (Consummer);
-                StopConsumer2 = (ICommand)client.GetStopTask (Consummer2);
-            }
         }
     }
 }
