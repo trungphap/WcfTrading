@@ -1,6 +1,7 @@
 ﻿using Commands;
 using Models;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
 
@@ -34,14 +35,18 @@ namespace ViewModels
             Consummer2 = new Shell() { StatusExecutable = true };
             QueueShell = new Shell() { StatusExecutable = true };
             ProducerShell = new Shell() { StatusExecutable = true };
-            ProducerShell2 = new Shell() { StatusExecutable = true };          
-
+            ProducerShell2 = new Shell() { StatusExecutable = true };
+            List<IShell> shellList = new List<IShell>();
+            shellList.Add(Consummer);
+            shellList.Add(Consummer2);
+            shellList.Add(ProducerShell);
+            shellList.Add(ProducerShell2);
             ProduceCommand2 = new ProduceCommand(ProducerShell2, QueueShell);
             ProduceCommand = new ProduceCommand(ProducerShell, QueueShell);
             ConsumeCommand = new ConsumeCommand(Consummer, QueueShell);
             ConsumeCommand2 = new ConsumeCommand(Consummer2, QueueShell);
             QueueCommand = new QueueCommandG<string>(QueueShell);
-            StopCommand = new StopCommand(QueueShell);
+            StopCommand = new StopCommand(QueueShell, shellList);
 
             StopProduce = new StopTask(ProducerShell);
             StopProduce2 = new StopTask(ProducerShell2);

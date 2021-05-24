@@ -13,6 +13,7 @@
         <vm:ProducerConsumer x:Key="cs"/>
         <local:ExecutableToReadonlyConverter x:Key="InverseBool"/>
         <local:BoolToFontConverter x:Key="BoolToFont"/>
+        <local:TotalConverter x:Key="TC"/>
     </Window.Resources>
     <Border Padding="10">
 
@@ -39,10 +40,22 @@
                 <Button Command="{Binding QueueCommand, Source={StaticResource cs}}"
                         Margin="10 0 0 0" Grid.Column="2" Content="Set queue"
                         CommandParameter="{Binding ElementName=txtQueueLength,Path=Text}"/>
+               
                 <Button Command="{Binding StopCommand, Source={StaticResource cs}}" FontWeight="Bold" Foreground="Red"
-                                             Margin="10 0 0 0" Grid.Column="3" Content="Stop queue"  />
+                                             Margin="10 0 0 0" Grid.Column="3" Content="Stop queue" 
+                         CommandParameter="{Binding ElementName=txtTotalSteps,Path=Text}"/>
             </Grid>
-
+            <!-- Total step time x 5 for stop queue command-->
+            <TextBlock   x:Name="txtTotalSteps" Visibility="Hidden" Height="1">
+                <TextBlock.Text>
+                    <MultiBinding Converter="{StaticResource TC}">
+                        <Binding ElementName="txtStepTimeProducer" Path="Text" Mode="OneWay"/>
+                        <Binding ElementName="txtStepTimeConsumer" Path="Text" Mode="OneWay"/>
+                        <Binding ElementName="txtStepP2"  Path="Text" Mode="OneWay"/>
+                        <Binding ElementName="txtStepc2"  Path="Text" Mode="OneWay"/>
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
             <!-- Set and commnand Producer 1 -->
             <TextBlock Text="Producer 1" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 3 0 2"/>
             <Grid>

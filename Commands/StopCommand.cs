@@ -1,18 +1,22 @@
 ﻿using Models;
+using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Commands
 {
-    public sealed class StopCommand: AsyncCommand
+    public sealed class StopCommand : AsyncCommand
     {
-        
+
         readonly IShell _stopShell;
-       
-        public StopCommand(IShell stopShell)
+        readonly List<IShell> _shellList;
+
+        public StopCommand(IShell stopShell, List<IShell> shellList)
         {
             _stopShell = stopShell;
-            
+            _shellList = shellList;
         }
 
 
@@ -25,13 +29,17 @@ namespace Commands
 
 
 
-        public async  override Task ExecuteAsync(object parameter)
+        public async override Task ExecuteAsync(object parameter)
         {
-            _stopShell.StatusExecutable =true;
-            _stopShell.FontText ="";
-           if(SingleChannel.ShareChannelWriter.TryComplete()) SingleChannel.ResetChannel();
+            _shellList.ForEach(s => s.IsExecuting = false);
+            _stopShell.StatusExecutable = true;
+            _stopShell.FontText = "";
+            int.TryParse((string)parameter, out int t);
+            await Task.Delay(Math.Max(t, 3000));
+
+            if (SingleChannel.ShareChannelWriter.TryComplete()) SingleChannel.ResetChannel();
             await Task.Delay(1);
         }
-    
+
     }
 }
